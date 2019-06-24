@@ -11,6 +11,9 @@ public class MyApp {
 		for (User user : userDao.findAll()) {
 			System.out.println(user);
 		}
+
+		System.out.println(userDao.findById(10));
+
 		context.close();
 	}
 }

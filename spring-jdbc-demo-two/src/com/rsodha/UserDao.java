@@ -13,6 +13,11 @@ public class UserDao {
 	JdbcTemplate jdbcTemplate;
 
 	public List<User> findAll() {
-		return jdbcTemplate.query("select * from user", new BeanPropertyRowMapper(User.class));
+		return jdbcTemplate.query("select * from user", new BeanPropertyRowMapper<User>(User.class));
+	}
+
+	public User findById(int id) {
+		return jdbcTemplate.queryForObject("select * from user where id = ?", new Object[] { id },
+				new BeanPropertyRowMapper<User>(User.class));
 	}
 }
