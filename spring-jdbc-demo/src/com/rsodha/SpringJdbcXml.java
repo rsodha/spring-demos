@@ -3,7 +3,7 @@ package com.rsodha;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class SpringJdbc {
+public class SpringJdbcXml {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
 		UserDao userDao = context.getBean("udao", UserDao.class);
